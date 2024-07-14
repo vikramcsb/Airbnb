@@ -22,4 +22,4 @@
   <li>Used <b>Passport</b> for user authentication.</li>
 </ul>
 
-<h2>The site is hosted here: <a href="#">Airbnb</a></h2>
+<h2>The site is hosted here: <a href="https://airbnb-2-hf02.onrender.com/listings">Airbnb</a></h2>
