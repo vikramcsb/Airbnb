@@ -5,7 +5,7 @@
 <p>It has the basic functionalities</p>
 <ul>
   <li>User authentication using passport</li>
-  <li>Used cookies to implement sessions in the project.</li>
+  <li>Used express sessions and cookies to implement user-sessions in the project.</li>
   <li>A user is allowed to see various hotels. Have search functionalities based on the name of place or country.</li>
   <li>User can also write reviews(if logged-in), delete reviews(if written by them)</li>
   <li>User is also allowed to upload picture of their place (stored in Cloudinary)</li>
