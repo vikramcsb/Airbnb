@@ -140,18 +140,6 @@ app.use("*",(req,res,next)=>{
       next(new expresserror(404,"page not found"));
 });
 
-// app.get("/testlisting",async (req,res)=>{
-//       let samplelisting = new listing({
-//             title:"My new villa",
-//             description:"By the beach",
-//             price:1200,
-//             location:"Calangute, Goa",
-//             country:"India",
-//       });
-//       await samplelisting.save();
-//       res.send("successful testing");
-// })
-
 app.use((err,req,res,next)=>{
       let {statusCode=500,message="Something went wrong"} =err; 
       res.render("error.ejs",{err});
