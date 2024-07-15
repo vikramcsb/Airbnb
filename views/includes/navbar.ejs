@@ -15,6 +15,35 @@
     padding:0.5rem 2rem;
     font-size: 1rem;
   }
+
+  .filter{
+    margin-top: 2rem;
+    opacity: 0.7;
+  }
+
+  .filter:hover{
+    opacity:1;
+    cursor:pointer;
+  }
+
+  .filter p {
+    font-size: 0.8rem;
+  }
+
+  .tax-info{
+    display: none ;
+  }
+
+  .tax-toggle{
+    border:1px solid black;
+    border-radius: 1rem;
+    height:3.25rem;
+    padding:1rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+  }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
@@ -51,6 +80,120 @@
             <a class="nav-link" href="/logout"><b>Log-out</b></a>
             <% } %>
             <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+
+    <!-- new navbar -->
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+        <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#offcanvasNavbar" 
+        aria-controls="offcanvasNavbar" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-body">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Explore</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="navbar-nav ms-auto" >
+              <form class="d-flex needs-validation" role="search" method="post" action="/filter" novalidate>
+                <input class="form-control me-2 search-input" type="search" placeholder="Search destinations" name="location_s" required>
+                <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <!-- <div class="invalid-feedback">Enter something to search</div> -->
+              </form>
+            </div>
+            <!-- login , signup and logout links -->
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="/listings/new">Airbnb your home</a>
+              <% if(!curruser){ %>
+              <a class="nav-link" href="/signup"><b>Sign up</b></a>
+              <a class="nav-link" href="/login"><b>Login</b></a>
+              <% } %>
+              <% if(curruser){ %>
+              <a class="nav-link" href="/logout"><b>Log-out</b></a>
+              <% } %>
+              <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+            </div>
+            <a class="nav-link" href="/filter/trending">
+              <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>    
+              </div>
+            </a>
+            <a class="nav-link" href="/filter/rooms">
+              <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>    
+            </div>
+            </a>
+            <a class="nav-link" href="/filter/beach">
+              <div class="filter">
+                <div><i class="fa-solid fa-mountain-city"></i></div>
+                <p>Beach</p>    
+            </div>
+            </a>
+            <a class="nav-link" href="/filter/mountains">
+              <div class="filter">
+                <div><i class="fa-solid fa-mountain"></i></div>
+                <p>Mountains</p>    
+            </div>
+            </a>
+            <a class="nav-link" href="/filter/castles">
+              <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castles</p>    
+            </div>
+            </a>
+            <a class="nav-link" href="/filter/pools">
+              <div class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Amazing Pools</p>    
+            </div>
+            </a>
+            <a class="nav-link" href="/filter/camping">
+              <div class="filter">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>    
+            </div>
+            </a>
+            <a class="nav-link" href="/filter/farms">
+              <div class="filter">
+                <div><i class="fa-solid fa-cow"></i></div>
+                <p>Farms</p>    
+            </div>
+            </a>
+            <a class="nav-link" href="/filter/arctic"><div class="filter">
+              <div><i class="fa-regular fa-snowflake"></i></div>
+              <p>Arctic</p>    
+          </div></a>
+            <a class="nav-link" href="/filter/domes">
+              <div class="filter">
+                <div><i class="fa-solid fa-igloo"></i></div>
+                <p>Domes</p>    
+            </div>
+            </a>
+            <a class="nav-link" href="/filter/boats">
+              <div class="filter">
+                <div><i class="fa-solid fa-ship"></i></div>
+                <p>Boats </p>    
+            </div>
+            </a>
+            <div class="tax-toggle">
+              <div class="form-check-reverse form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+              </div>
+            </div>
           </div>
         </div>
       </div>
